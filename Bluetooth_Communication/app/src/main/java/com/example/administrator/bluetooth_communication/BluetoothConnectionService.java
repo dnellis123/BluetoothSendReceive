@@ -245,7 +245,7 @@ public class BluetoothConnectionService {
         }
 
         public void run(){
-            byte[] buffer = new byte[1024];  // buffer store for the stream
+            byte[] buffer = new byte[8192];  // buffer store for the stream
 
 
             int bytes; // bytes returned from read()
@@ -257,7 +257,7 @@ public class BluetoothConnectionService {
 
                     bytes = mmInStream.read(buffer);
                     String incomingMessage = new String(buffer, 0, bytes);
-                    Log.d(TAG, "InputStream: " + incomingMessage);
+                    Log.d(TAG, incomingMessage);
                 }
                 catch (IOException e) {
 
